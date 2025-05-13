@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import Tarefa from '../../models/Tarefa'
-import * as enums from '../../utils/enums/Tarefa'
 
 type TarefasState = {
   itens: Tarefa[]
@@ -10,24 +9,18 @@ const initialState: TarefasState = {
   itens: [
     {
       id: 1,
-      descricao: 'Estudar JavaScript revendo o exercicio do módulo 7',
-      prioridade: enums.Prioridade.NORMAL,
-      status: enums.Status.CONCLUIDA,
-      titulo: 'Estudar JavaScript'
+      email: 'asimov@hotmail.com',
+      nome: 'Isaak Yudavich Azimov'
     },
     {
       id: 2,
-      descricao: 'Estudar material de apoio',
-      prioridade: enums.Prioridade.NORMAL,
-      status: enums.Status.PENDENTE,
-      titulo: 'Estudar TypeScript'
+      email: 'lewis@gmail.com',
+      nome: 'Clive Staples Lewis'
     },
     {
       id: 3,
-      descricao: 'Praticar a construção de uma landing page',
-      prioridade: enums.Prioridade.NORMAL,
-      status: enums.Status.CONCLUIDA,
-      titulo: 'Estudar Bootstrap'
+      email: 'tolkien@yahoo.com',
+      nome: 'John Ronald Reuel Tolkien'
     }
   ]
 }
@@ -51,7 +44,7 @@ const tarefasSlice = createSlice({
     cadastrar: (state, action: PayloadAction<Omit<Tarefa, 'id'>>) => {
       const tarefaJaExiste = state.itens.find(
         (tarefa) =>
-          tarefa.titulo.toLowerCase() === action.payload.titulo.toLowerCase()
+          tarefa.nome.toLowerCase() === action.payload.nome.toLowerCase()
       )
       if (tarefaJaExiste) {
         alert('Ja existe uma tarefa com esse nome')
@@ -63,24 +56,10 @@ const tarefasSlice = createSlice({
         }
         state.itens.push(tarefaNova)
       }
-    },
-    alteraStatus: (
-      state,
-      action: PayloadAction<{ id: number; finalizado: boolean }>
-    ) => {
-      const indexDaTarefa = state.itens.findIndex(
-        (t) => t.id === action.payload.id
-      )
-
-      if (indexDaTarefa >= 0) {
-        state.itens[indexDaTarefa].status = action.payload.finalizado
-          ? enums.Status.CONCLUIDA
-          : enums.Status.PENDENTE
-      }
     }
   }
 })
 
-export const { remover, editar, cadastrar, alteraStatus } = tarefasSlice.actions
+export const { remover, editar, cadastrar } = tarefasSlice.actions
 
 export default tarefasSlice.reducer
