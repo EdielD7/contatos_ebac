@@ -9,16 +9,21 @@ const initialState: TarefasState = {
   itens: [
     {
       id: 1,
+      fone: '123456789',
       email: 'asimov@hotmail.com',
       nome: 'Isaak Yudavich Azimov'
     },
     {
       id: 2,
+      fone: '123456789',
+
       email: 'lewis@gmail.com',
       nome: 'Clive Staples Lewis'
     },
     {
       id: 3,
+      fone: '123456789',
+
       email: 'tolkien@yahoo.com',
       nome: 'John Ronald Reuel Tolkien'
     }

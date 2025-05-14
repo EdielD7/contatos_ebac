@@ -23,8 +23,7 @@ export const Nome = styled.h3`
   margin-left: 8px;
 `
 
-export const Email = styled.input`
-  color: #000;
+export const Info = styled.input`
   font-size: 14px;
   line-height: 24px;
   font-family: 'Roboto Mono', monospace;
@@ -32,8 +31,14 @@ export const Email = styled.input`
   width: 100%;
   margin-bottom: 16px;
   margin-top: 16px;
-  border: none;
   background-color: transparent;
+  border: 1px solid #aaaaaa;
+  padding: 4px;
+
+  &:disabled {
+    color: #000;
+    border: none;
+  }
 `
 
 export const BarraAcoes = styled.div`

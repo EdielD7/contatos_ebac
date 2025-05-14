@@ -12,6 +12,7 @@ const Formulario = () => {
   const navigate = useNavigate()
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
+  const [fone, setFone] = useState('')
 
   const cadastrarTarefa = (evento: FormEvent) => {
     evento.preventDefault()
@@ -19,7 +20,8 @@ const Formulario = () => {
     dispatch(
       cadastrar({
         nome,
-        email
+        email,
+        fone
       })
     )
     navigate('/')
@@ -40,6 +42,12 @@ const Formulario = () => {
           onChange={({ target }) => setEmail(target.value)}
           type="email"
           placeholder="E-mail"
+        />
+        <Campo
+          value={fone}
+          onChange={({ target }) => setFone(target.value)}
+          type="tel"
+          placeholder="Telefone"
         />
         <BotaoSalvar type="submit">Cadastrar</BotaoSalvar>
       </Form>

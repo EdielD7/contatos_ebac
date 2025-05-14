@@ -32,7 +32,7 @@ const ListaDeTarefas = () => {
       <ul>
         {filtraTarefas().map((t) => (
           <li key={t.nome}>
-            <Tarefa id={t.id} email={t.email} nome={t.nome} />
+            <Tarefa id={t.id} fone={t.fone} email={t.email} nome={t.nome} />
           </li>
         ))}
       </ul>
