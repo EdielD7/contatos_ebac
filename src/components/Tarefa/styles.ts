@@ -23,8 +23,8 @@ export const Nome = styled.h3`
   margin-left: 8px;
 `
 
-export const Email = styled.textarea`
-  color: #8b8b8b;
+export const Email = styled.input`
+  color: #000;
   font-size: 14px;
   line-height: 24px;
   font-family: 'Roboto Mono', monospace;
@@ -32,7 +32,7 @@ export const Email = styled.textarea`
   width: 100%;
   margin-bottom: 16px;
   margin-top: 16px;
-  resize: none;
+  border: none;
   background-color: transparent;
 `
 

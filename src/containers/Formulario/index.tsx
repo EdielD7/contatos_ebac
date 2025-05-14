@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import { BotaoSalvar, MainContainer, Nome } from '../../styles'
+import { BotaoSalvar, MainContainer, Titulo } from '../../styles'
 import { Campo } from '../../styles'
 import { Form } from './styles'
 import { cadastrar } from '../../store/reducers/tarefas'
@@ -27,7 +27,7 @@ const Formulario = () => {
 
   return (
     <MainContainer>
-      <Nome>Novo contato</Nome>
+      <Titulo>Novo contato</Titulo>
       <Form onSubmit={cadastrarTarefa}>
         <Campo
           value={nome}
@@ -38,7 +38,7 @@ const Formulario = () => {
         <Campo
           value={email}
           onChange={({ target }) => setEmail(target.value)}
-          as="textarea"
+          type="email"
           placeholder="E-mail"
         />
         <BotaoSalvar type="submit">Cadastrar</BotaoSalvar>

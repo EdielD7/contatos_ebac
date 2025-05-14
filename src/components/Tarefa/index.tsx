@@ -32,13 +32,15 @@ const Tarefa = ({
 
   return (
     <S.Card>
-      <S.Nome>
+      <S.Nome id="nome">
         {estaEditando && <em>Editando: </em>}
         {nome}
       </S.Nome>
       <S.Email
+        type="email"
         disabled={!estaEditando}
         value={email}
+        id="email"
         onChange={(evento) => setEmail(evento.target.value)}
       />
       <S.BarraAcoes>

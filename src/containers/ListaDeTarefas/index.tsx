@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 import Tarefa from '../../components/Tarefa'
-import { MainContainer, Nome } from '../../styles'
+import { MainContainer, Titulo } from '../../styles'
 
 import { RootReducer } from '../../store'
 
@@ -28,7 +28,7 @@ const ListaDeTarefas = () => {
 
   return (
     <MainContainer>
-      <Nome as="p">{mensagem}</Nome>
+      <Titulo as="p">{mensagem}</Titulo>
       <ul>
         {filtraTarefas().map((t) => (
           <li key={t.nome}>
